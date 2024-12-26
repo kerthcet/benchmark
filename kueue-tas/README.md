@@ -7,7 +7,7 @@
 * Run with `kubectl delete stage pod-complete` to make sure Pods always consuming the GPUs.
 * Install [Kueue](https://github.com/kubernetes-sigs/kueue) with version > v0.9 to make sure TAS is enabled.
 * Enable TAS in kueue with configurations:
-    ```
+    ```yaml
     spec:
         containers:
         - args:
@@ -15,6 +15,12 @@
             - --zap-log-level=2
             - --feature-gates=TopologyAwareScheduling=true
     ```
+
+**Note**: Install job controllers as you need. For instance, we use pytorchJob here, so we need to install the kubeflow training operator and CRDs first:
+
+```yaml
+kubectl apply --server-side -k "github.com/kubeflow/training-operator.git/manifests/overlays/standalone?ref=v1.8.1"
+```
 
 ## Initialization
 

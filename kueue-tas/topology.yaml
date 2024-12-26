@@ -6,7 +6,7 @@ spec:
   levels:
   - nodeLabel: "topology-key/rdma"
   - nodeLabel: "topology-key/supernode"
-  - nodeLabel: "kubernetes.io/hostname"
+  # - nodeLabel: "kubernetes.io/hostname"
 ---
 kind: ResourceFlavor
 apiVersion: kueue.x-k8s.io/v1beta1
@@ -38,4 +38,3 @@ metadata:
   name: tas-local-queue
 spec:
   clusterQueue: "tas-cluster-queue"
-

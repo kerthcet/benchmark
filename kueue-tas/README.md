@@ -33,6 +33,14 @@ Following the steps to initialize the environment:
 * Create fake nodes with [init.sh](./init.sh), only one RDMA domain is initialized.
 * Create batch job or pytorchJob as your need to mock the cases, like [TP16](./tp16.yaml) or [TP32](./tp32.yaml) or simple [job](./job.yaml).
 
+**Note**: Pods should have toleration to be scheduled to fake nodes:
+```yaml
+tolerations:
+- key: "kwok.x-k8s.io/node"
+    operator: "Exists"
+    effect: "NoSchedule"
+```
+
 ## GC
 
 Run with [gc.sh](./gc.sh) to delete all the fake nodes.

@@ -19,7 +19,7 @@ spec:
         args: ["300s"]
         resources:
           limits:
-            nvidia.com/gpu: 1
+            nvidia.com/gpu: 8
       restartPolicy: Never
       tolerations:
       - key: "kwok.x-k8s.io/node"

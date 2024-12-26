@@ -1,0 +1,41 @@
+apiVersion: kueue.x-k8s.io/v1alpha1
+kind: Topology
+metadata:
+  name: "default"
+spec:
+  levels:
+  - nodeLabel: "topology-key/rdma"
+  - nodeLabel: "topology-key/supernode"
+  - nodeLabel: "kubernetes.io/hostname"
+---
+kind: ResourceFlavor
+apiVersion: kueue.x-k8s.io/v1beta1
+metadata:
+  name: "tas-flavor"
+spec:
+  nodeLabels:
+    topology-key/zone: "zone1"
+  topologyName: "default"
+---
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: ClusterQueue
+metadata:
+  name: "tas-cluster-queue"
+spec:
+  namespaceSelector: {} # match all.
+  resourceGroups:
+  - coveredResources: ["nvidia.com/gpu"]
+    flavors:
+    - name: "tas-flavor"
+      resources:
+      - name: "nvidia.com/gpu"
+        nominalQuota: 3000
+---
+apiVersion: kueue.x-k8s.io/v1beta1
+kind: LocalQueue
+metadata:
+  namespace: tas
+  name: tas-local-queue
+spec:
+  clusterQueue: "tas-cluster-queue"
+

@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-tp1
+  labels:
+    kueue.x-k8s.io/queue-name: tas-local-queue
+spec:
+  parallelism: 1
+  completions: 1
+  completionMode: Indexed
+  template:
+    metadata:
+      annotations:
+        kueue.x-k8s.io/podset-required-topology: "topology-key/supernode"
+    spec:
+      containers:
+      - name: dummy-job
+        image: gcr.io/k8s-staging-perf-tests/sleep:v0.1.0
+        args: ["300s"]
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      restartPolicy: Never
+      tolerations:
+      - key: "kwok.x-k8s.io/node"
+        operator: "Exists"
+        effect: "NoSchedule"

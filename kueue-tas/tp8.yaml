@@ -1,7 +1,7 @@
 apiVersion: kubeflow.org/v1
 kind: PyTorchJob
 metadata:
-  name: pytorch-tp16
+  name: pytorch-tp8
   namespace: tas
   labels:
     kueue.x-k8s.io/queue-name: tas-local-queue
@@ -33,7 +33,7 @@ spec:
             operator: "Exists"
             effect: "NoSchedule"
     Worker:
-      replicas: 15
+      replicas: 7
       restartPolicy: OnFailure
       template:
         metadata:

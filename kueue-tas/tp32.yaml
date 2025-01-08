@@ -26,7 +26,7 @@ spec:
                 - "/opt/pytorch-mnist/mnist.py"
                 - "--epochs=1"
               resources:
-                requests:
+                limits:
                   nvidia.com/gpu: 8
           tolerations:
           - key: "kwok.x-k8s.io/node"
@@ -38,7 +38,7 @@ spec:
       template:
         metadata:
           annotations:
-            kueue.x-k8s.io/podset-required-topology: "topology-key/rdma"
+            kueue.x-k8s.io/podset-preferred-topology: "topology-key/supernode"
         spec:
           containers:
             - name: pytorch
@@ -51,7 +51,7 @@ spec:
                 - "/opt/pytorch-mnist/mnist.py"
                 - "--epochs=1"
               resources:
-                requests:
+                limits:
                   nvidia.com/gpu: 8
           tolerations:
           - key: "kwok.x-k8s.io/node"

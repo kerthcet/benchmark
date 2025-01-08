@@ -14,14 +14,14 @@ echo $SCRIPT_DIR
 "$SCRIPT_DIR"/create_nodes.sh kwok-node 28 32 "topology-key/zone=zone1,topology-key/supernode=s7,topology-key/rdma=r0" "topology-key/supernode=s7,topology-key/rdma=r0"
 
 # rdma1
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 32 36 "topology-key/zone=zone1,topology-key/supernode=s0,topology-key/rdma=r1" "topology-key/supernode=s0,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 36 40 "topology-key/zone=zone1,topology-key/supernode=s1,topology-key/rdma=r1" "topology-key/supernode=s1,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 40 44 "topology-key/zone=zone1,topology-key/supernode=s2,topology-key/rdma=r1" "topology-key/supernode=s2,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 44 48 "topology-key/zone=zone1,topology-key/supernode=s3,topology-key/rdma=r1" "topology-key/supernode=s3,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 48 52 "topology-key/zone=zone1,topology-key/supernode=s4,topology-key/rdma=r1" "topology-key/supernode=s4,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 52 56 "topology-key/zone=zone1,topology-key/supernode=s5,topology-key/rdma=r1" "topology-key/supernode=s5,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 56 60 "topology-key/zone=zone1,topology-key/supernode=s6,topology-key/rdma=r1" "topology-key/supernode=s6,topology-key/rdma=r1"
-# "$SCRIPT_DIR"/create_nodes.sh kwok-node 60 64 "topology-key/zone=zone1,topology-key/supernode=s7,topology-key/rdma=r1" "topology-key/supernode=s7,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 32 36 "topology-key/zone=zone1,topology-key/supernode=s0,topology-key/rdma=r1" "topology-key/supernode=s0,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 36 40 "topology-key/zone=zone1,topology-key/supernode=s1,topology-key/rdma=r1" "topology-key/supernode=s1,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 40 44 "topology-key/zone=zone1,topology-key/supernode=s2,topology-key/rdma=r1" "topology-key/supernode=s2,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 44 48 "topology-key/zone=zone1,topology-key/supernode=s3,topology-key/rdma=r1" "topology-key/supernode=s3,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 48 52 "topology-key/zone=zone1,topology-key/supernode=s4,topology-key/rdma=r1" "topology-key/supernode=s4,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 52 56 "topology-key/zone=zone1,topology-key/supernode=s5,topology-key/rdma=r1" "topology-key/supernode=s5,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 56 60 "topology-key/zone=zone1,topology-key/supernode=s6,topology-key/rdma=r1" "topology-key/supernode=s6,topology-key/rdma=r1"
+"$SCRIPT_DIR"/create_nodes.sh kwok-node 60 64 "topology-key/zone=zone1,topology-key/supernode=s7,topology-key/rdma=r1" "topology-key/supernode=s7,topology-key/rdma=r1"
 
 # # rdma2
 # "$SCRIPT_DIR"/create_nodes.sh kwok-node 64 68 "topology-key/zone=zone1,topology-key/supernode=s0,topology-key/rdma=r2" "topology-key/supernode=s0,topology-key/rdma=r2"

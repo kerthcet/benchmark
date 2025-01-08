@@ -1,7 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: job-tp1
+  name: sample-job
+  namespace: tas
   labels:
     kueue.x-k8s.io/queue-name: tas-local-queue
 spec:
@@ -11,7 +12,7 @@ spec:
   template:
     metadata:
       annotations:
-        kueue.x-k8s.io/podset-required-topology: "topology-key/supernode"
+        kueue.x-k8s.io/podset-preferred-topology: "topology-key/supernode"
     spec:
       containers:
       - name: dummy-job

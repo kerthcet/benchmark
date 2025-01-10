@@ -18,8 +18,8 @@ spec:
           containers:
             - name: pytorch
               image: docker.io/kubeflowkatib/pytorch-mnist-cpu:v1beta1-21320b6
-#              If you have gpu, pytorch-mnist-gpu would be helpful. pytorch-mnist-gpu is approximately 22GB
-#              image: docker.io/kubeflowkatib/pytorch-mnist-cpu:latest
+              #  If you have gpu, pytorch-mnist-gpu would be helpful. pytorch-mnist-gpu is approximately 22GB
+              # image: docker.io/kubeflowkatib/pytorch-mnist-cpu:latest
               imagePullPolicy: Always
               command:
                 - "python3"
@@ -29,9 +29,9 @@ spec:
                 limits:
                   nvidia.com/gpu: 8
           tolerations:
-          - key: "kwok.x-k8s.io/node"
-            operator: "Exists"
-            effect: "NoSchedule"
+            - key: "kwok.x-k8s.io/node"
+              operator: "Exists"
+              effect: "NoSchedule"
     Worker:
       replicas: 15
       restartPolicy: OnFailure
@@ -43,8 +43,8 @@ spec:
           containers:
             - name: pytorch
               image: docker.io/kubeflowkatib/pytorch-mnist-cpu:v1beta1-21320b6
-#              If you have gpu, pytorch-mnist-gpu would be helpful. pytorch-mnist-gpu is approximately 22GB
-#              image: docker.io/kubeflowkatib/pytorch-mnist-cpu:latest
+              # If you have gpu, pytorch-mnist-gpu would be helpful. pytorch-mnist-gpu is approximately 22GB
+              # image: docker.io/kubeflowkatib/pytorch-mnist-cpu:latest
               imagePullPolicy: Always
               command:
                 - "python3"
@@ -54,6 +54,6 @@ spec:
                 limits:
                   nvidia.com/gpu: 8
           tolerations:
-          - key: "kwok.x-k8s.io/node"
-            operator: "Exists"
-            effect: "NoSchedule"
+            - key: "kwok.x-k8s.io/node"
+              operator: "Exists"
+              effect: "NoSchedule"
